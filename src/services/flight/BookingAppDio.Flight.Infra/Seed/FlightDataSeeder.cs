@@ -1,4 +1,5 @@
-﻿using BookingAppDio.Flight.Domain.Aircrafts.Models;
+﻿using BookingAppDio.Core.EFCore;
+using BookingAppDio.Flight.Domain.Aircrafts.Models;
 using BookingAppDio.Flight.Domain.Airports.Models;
 using BookingAppDio.Flight.Domain.Flights.Models;
 using BookingAppDio.Flight.Domain.Seats;
