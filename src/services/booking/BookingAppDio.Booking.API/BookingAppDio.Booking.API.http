@@ -1,0 +1,6 @@
+@BookingAppDIO.Booking.API_HostAddress = http://localhost:5012
+
+GET {{BookingAppDIO.Booking.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

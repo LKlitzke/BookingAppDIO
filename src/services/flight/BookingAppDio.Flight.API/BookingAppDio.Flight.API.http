@@ -1,0 +1,6 @@
+@BookingAppDio.Flight.API_HostAddress = http://localhost:5293
+
+GET {{BookingAppDio.Flight.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

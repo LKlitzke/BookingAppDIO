@@ -1,0 +1,6 @@
+@BookingAppDio.Identity_HostAddress = http://localhost:5179
+
+GET {{BookingAppDio.Identity_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
