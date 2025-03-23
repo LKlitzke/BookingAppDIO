@@ -10,8 +10,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.14" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Npgsql" Version="8.0.7" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\core\BookingAppDIO.Bus\BookingAppDio.Bus.csproj" />
+    <ProjectReference Include="..\..\..\core\BookingAppDIO.Core\BookingAppDio.Core.csproj" />
+    <ProjectReference Include="..\..\flight\BookingAppDio.Flight.API\BookingAppDio.Flight.API.csproj" />
+    <ProjectReference Include="..\BookingAppDio.Booking.Domain\BookingAppDio.Booking.Domain.csproj" />
+    <ProjectReference Include="..\BookingAppDio.Booking.Infra\BookingAppDio.Booking.Infra.csproj" />
   </ItemGroup>
 
 </Project>

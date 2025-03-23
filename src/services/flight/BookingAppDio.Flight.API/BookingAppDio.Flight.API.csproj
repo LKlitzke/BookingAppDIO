@@ -10,15 +10,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="MassTransit" Version="8.4.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.14" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\" />
-    <Folder Include="Dtos\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Mappings\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\core\BookingAppDIO.Bus\BookingAppDio.Bus.csproj" />
+    <ProjectReference Include="..\..\..\core\BookingAppDIO.Core\BookingAppDio.Core.csproj" />
+    <ProjectReference Include="..\BookingAppDio.Flight.Infra\BookingAppDio.Flight.Infra.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,20 @@
-var builder = WebApplication.CreateBuilder(args);
+using BookingAppDio.Bus;
+using BookingAppDio.Core.Options;
+using BookingAppDio.Core.Web;
+using BookingAppDio.Email;
 
+var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
 // Add services to the container.
+
+var appOptions = builder.Services.GetOptions<AppOptions>("AppOptions");
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCustomMassTransit(configuration, typeof(EmailRoot).Assembly);
+builder.Services.AddSingleton<IConfiguration>(configuration);
 
 var app = builder.Build();
 
@@ -16,10 +25,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+
+app.MapGet("/", x => x.Response.WriteAsync(appOptions.Name));
 
 app.Run();
