@@ -88,9 +88,9 @@ namespace BookingAppDio.Flight.Infra.Seed
                 var flights = new List<Domain.Flights.Models.Flight>
                 {
                     Domain.Flights.Models.Flight.Create(1, "L17", 2, DateTime.Now.AddDays(-15), 1, DateTime.Now.AddDays(-15).AddHours(2), 2, 120, DateTime.Now.AddDays(-15), FlightStatus.Completed, 5020),
-                    Domain.Flights.Models.Flight.Create(1, "D02", 3, DateTime.Now.AddDays(-1), 5, DateTime.Now.AddDays(-1).AddHours(7), 5, 420, DateTime.Now.AddDays(-1), FlightStatus.Delay, 10500),
-                    Domain.Flights.Models.Flight.Create(1, "T30", 1, DateTime.Now, 1, DateTime.Now.AddHours(5), 1, 300, DateTime.Now, FlightStatus.Canceled, 13700),
-                    Domain.Flights.Models.Flight.Create(1, "K13", 5, DateTime.Now.AddDays(6), 1, DateTime.Now.AddDays(6).AddHours(1), 4, 60, DateTime.Now.AddDays(6), FlightStatus.Canceled, 4100),
+                    Domain.Flights.Models.Flight.Create(2, "D02", 3, DateTime.Now.AddDays(-1), 5, DateTime.Now.AddDays(-1).AddHours(7), 5, 420, DateTime.Now.AddDays(-1), FlightStatus.Delay, 10500),
+                    Domain.Flights.Models.Flight.Create(3, "T30", 1, DateTime.Now, 1, DateTime.Now.AddHours(5), 1, 300, DateTime.Now, FlightStatus.Canceled, 13700),
+                    Domain.Flights.Models.Flight.Create(4, "K13", 5, DateTime.Now.AddDays(6), 1, DateTime.Now.AddDays(6).AddHours(1), 4, 60, DateTime.Now.AddDays(6), FlightStatus.Canceled, 4100),
                 };
                 await _flightDbContext.Flights.AddRangeAsync(flights);
                 await _flightDbContext.SaveChangesAsync();

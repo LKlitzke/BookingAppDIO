@@ -24,7 +24,8 @@ var appOptions = builder.Services.GetOptions<AppOptions>("AppOptions");
 //AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddDbContext<BookingDbContext>(options =>
-    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")
+    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+    x => x.MigrationsAssembly(typeof(BookingDbContext).Assembly.GetName().Name)
 ));
 
 builder.Services.AddControllers();
